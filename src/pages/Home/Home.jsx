@@ -1,4 +1,3 @@
-import { FilmList } from 'components/FilmList';
 import { useState, useEffect } from 'react';
 import { FetchMovieTrand } from '../../components/API/FetchApi';
 import { NavFilmItem, ListFilm, ItemFilm } from './Home.styled';
@@ -17,7 +16,6 @@ export const Home = () => {
   return (
     <div>
       <h1>Tranding Day</h1>
-      {/* <FilmList filmList={movieTrends} /> */}
       <ListFilm>
         {movieTrends.map(({ id, title }) => {
           return (

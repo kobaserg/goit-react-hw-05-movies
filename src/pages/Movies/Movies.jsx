@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { FetchSearchQuery } from 'components/API/FetchApi';
 import { NavFilmItem, ListFilm, ItemFilm } from '../../pages/Home/Home.styled';
 import Notiflix from 'notiflix';
-import { NavForm, NavInput, NavBtn } from './Movies.styled';
+import { NavForm, NavBtn } from './Movies.styled';
 
 export const Movies = () => {
   const [filmSearch, setFilmSearch] = useState('');
