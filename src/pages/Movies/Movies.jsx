@@ -1,4 +1,4 @@
-import { Outlet, useSearchParams } from 'react-router-dom';
+import { Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { FetchSearchQuery } from 'components/API/FetchApi';
 import { NavFilmItem, ListFilm, ItemFilm } from '../../pages/Home/Home.styled';
@@ -9,6 +9,7 @@ export const Movies = () => {
   const [filmSearch, setFilmSearch] = useState('');
   const [filmSearchGallery, setFilmSearchGallery] = useState([]);
   const [filmSearchParams, setFilmSearchParams] = useSearchParams();
+  const location = useLocation();
   let film = filmSearchParams.get('query') ?? '';
 
   useEffect(() => {
@@ -65,7 +66,9 @@ export const Movies = () => {
           {filmSearchGallery.map(({ id, title }) => {
             return (
               <ItemFilm key={id}>
-                <NavFilmItem to={`${id}`}>{title}</NavFilmItem>
+                <NavFilmItem to={`${id}`} state={{ from: location }}>
+                  {title}
+                </NavFilmItem>
               </ItemFilm>
             );
           })}

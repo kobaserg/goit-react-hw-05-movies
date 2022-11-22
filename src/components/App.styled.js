@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const Section = styled.div``;
+
 export const Header = styled.div`
   display: flex;
   align-content: center;
@@ -8,8 +10,8 @@ export const Header = styled.div`
   height: 40px;
   align-items: center;
   padding: 10px 0;
-  /* border-bottom: 2px solid black; */
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
 `;
 
 export const Navlink = styled(NavLink)`

@@ -26,8 +26,6 @@ export const FetchMovieCastId = id => {
   );
 };
 
-export const FetchGenres = () => {};
-
 export const FetchSearchQuery = query => {
   return fetch(
     `${mainHTTP}search/movie?api_key=${API_KEY}&query=${query}`

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { FetchMovieTrand } from '../../components/API/FetchApi';
 import { NavFilmItem, ListFilm, ItemFilm } from './Home.styled';
 
 export const Home = () => {
   const [movieTrends, setMovieTrends] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     FetchMovieTrand(1)
@@ -20,7 +22,9 @@ export const Home = () => {
         {movieTrends.map(({ id, title }) => {
           return (
             <ItemFilm key={id}>
-              <NavFilmItem to={`/movies/${id}`}>{title}</NavFilmItem>
+              <NavFilmItem to={`/movies/${id}`} state={{ from: location }}>
+                {title}
+              </NavFilmItem>
             </ItemFilm>
           );
         })}

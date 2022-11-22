@@ -4,11 +4,11 @@ import { Movies } from '../pages/Movies/Movies';
 import { MovieDetails } from '../pages/MovieDetails/MovieDetails';
 import { Cast } from '../pages/Cast/Cast';
 import { Reviews } from '../pages/Reviews/Reviews';
-import { Header, Navlink } from './App.styled';
+import { Header, Navlink, Section } from './App.styled';
 
 export const App = () => {
   return (
-    <div>
+    <Section>
       <Header>
         <nav>
           <Navlink to="/">Home</Navlink>
@@ -26,6 +26,6 @@ export const App = () => {
 
         <Route path="*" element={<Home />} />
       </Routes>
-    </div>
+    </Section>
   );
 };
